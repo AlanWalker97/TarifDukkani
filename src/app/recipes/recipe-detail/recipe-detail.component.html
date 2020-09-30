@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-xs-8">
+        <h1>{{recipeDetail.name}}</h1>
+    </div>
+    <div class="col-xs-4">
+        <div class="btn-group pull-right" appDropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle" style="margin-top: 25%;">Tarifi Yönet<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a style="cursor: pointer;" (click)="addIngredientsToShoppingList()">İçindekileri Alışveriş Listesine Ekle</a></li>
+                <li><a style="cursor: pointer;" (click)="editRecipe()">Tarifi Düzenle</a></li>
+                <li><a style="cursor: pointer;" (click)="removeRecipe()">Tarifi Sil</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12" style="margin-bottom: 5%;">
+        {{recipeDetail.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <img src="{{recipeDetail.imagePath}}" (error)="img.src = recipeDetail.errorImage" alt="{{recipeDetail.name}} resmi" class="img-responsive" style="margin-bottom: 5%;" #img>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12" style="text-decoration-line: underline;">
+        İçindekiler:
+    </div>
+    <div class="col-xs-12" >
+        <ul class="list-group">
+            <a class="list-group-item" style="cursor: pointer;" *ngFor="let ingredient of recipeDetail.ingredients">
+            {{ingredient.name}} -> {{ingredient.amount}} Adet
+            </a>
+        </ul>
+    </div>
+</div>

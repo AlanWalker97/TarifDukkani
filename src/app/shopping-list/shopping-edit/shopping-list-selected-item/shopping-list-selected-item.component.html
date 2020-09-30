@@ -1,0 +1,6 @@
+<div *ngFor="let ingredient of ingredients">
+    <button id="buton" class="btn btn-danger" type="button" *ngIf="this.ingredients.indexOf(ingredient)===selectedId; else invisible" (click)="onDelete()">Sil</button>
+    <ng-template #invisible>
+        <button id="buton" class="btn btn-danger invisible" type="button">Sil</button>
+    </ng-template>
+</div>

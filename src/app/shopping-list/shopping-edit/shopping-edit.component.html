@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="shoppingListForm" (ngSubmit)="onAdding()">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="name">Ad</label>
+                    <input formControlName="name" type="text" id="name" class="form-control">
+                    <span *ngIf="shoppingListForm.get('name').invalid && shoppingListForm.get('name').touched"
+                            class="help-block">Lütfen geçerli bir ad giriniz!</span>
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="amount">Miktar</label>
+                    <input formControlName="amount" type="number" id="amount" class="form-control">
+                    <span *ngIf="shoppingListForm.get('amount').invalid && shoppingListForm.get('amount').touched"
+                            class="help-block">Lütfen adet kısmını boş bırakmayın ve 0'dan büyük bir değer giriniz!</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" [disabled]="shoppingListForm.get('name').invalid || shoppingListForm.get('amount').invalid" type="submit">Ekle</button>
+                    <button class="btn btn-primary" [disabled]="shoppingListForm.get('name').invalid || shoppingListForm.get('amount').invalid" type="button" (click)="onClearing()">Temizle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

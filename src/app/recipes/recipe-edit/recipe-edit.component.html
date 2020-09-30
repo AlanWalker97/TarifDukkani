@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="recipeEditForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Tarif Adı</label>
+                <input type="text" id="name" formControlName="name" class="form-control">
+                <span *ngIf="recipeEditForm.get('name').invalid && recipeEditForm.get('name').touched"
+                    class="help-block">Lütfen geçerli bir tarif adı giriniz!</span>
+            </div>
+            <div class="form-group">
+                <label for="description">Tanım</label>
+                <textarea type="text" id="description" formControlName="description" class="form-control"
+                    rows="10"></textarea>
+                <span *ngIf="recipeEditForm.get('description').invalid && recipeEditForm.get('description').touched"
+                    class="help-block">Lütfen geçerli bir tanım giriniz!</span>
+            </div>
+            <div class="form-group">
+                <label for="imagePath">Tarif Resim Linki</label>
+                <input type="url" id="imagePath" class="form-control" formControlName="imagePath" name="imagePath">
+                <span *ngIf="recipeEditForm.get('imagePath').invalid && recipeEditForm.get('imagePath').touched"
+                    class="help-block">Lütfen geçerli bir link giriniz!</span>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-4">
+                    <label for="ingredientName">Ad</label>
+                    <input formControlName="ingredientName" type="text" id="ingredientName" class="form-control">
+                    <span
+                        *ngIf="recipeEditForm.get('ingredientName').invalid && recipeEditForm.get('ingredientName').touched"
+                        class="help-block">Lütfen geçerli bir ad giriniz!</span>
+                </div>
+                <div class="col-xs-4">
+                    <label for="ingredientAmount">Miktar</label>
+                    <input formControlName="ingredientAmount" type="number" id="ingredientAmount" class="form-control" style="margin-bottom: 5%;">
+                    <span
+                        *ngIf="recipeEditForm.get('ingredientAmount').invalid && recipeEditForm.get('ingredientAmount').touched"
+                        class="help-block">Lütfen adet kısmını boş bırakmayın ve 0'dan büyük bir değer giriniz!</span>
+                    <button class="btn btn-success pull-right" type="button" [disabled]="recipeEditForm.get('ingredientName').invalid || recipeEditForm.get('ingredientAmount').invalid" (click)="addIngredientToRecipe()" style="margin-bottom: 3%;">Malzeme Ekle</button>
+                    <button class="btn btn-warning pull-right" type="button" [disabled]="recipeEditForm.get('ingredientName').invalid || recipeEditForm.get('ingredientAmount').invalid" (click)="removeIngredientFromRecipe()">Malzeme Temizle</button>
+                </div>
+                <div class="col-xs-4">
+                    <label for="ingredients">Malzemeler:</label>
+                    <textarea type="text" id="ingredients" disabled="true" class="form-control" rows="5" style="margin-bottom: 5%;">{{textAreaValue}}</textarea>
+                    <button class="btn btn-primary pull-right" type="submit" [disabled]="checkFormIntegrity()">{{buttonText}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
