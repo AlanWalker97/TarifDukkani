@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { RecipeService } from './recipe.service';
 
 @Component({
@@ -7,8 +8,16 @@ import { RecipeService } from './recipe.service';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  constructor() { }
+  error = null;
+  private errorSub: Subscription;
+  constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
+    this.errorSub = this.recipeService.error.subscribe(errorMessage => {
+      this.error = errorMessage;
+    });
+  }
+  ngOnDestroy(){
+    this.errorSub.unsubscribe();
   }
 }

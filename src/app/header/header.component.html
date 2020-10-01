@@ -15,8 +15,8 @@
                 <li class="dropdown" appDropdown>
                     <a style="cursor: pointer;" class="dropdown-toggle" role="button">Yönet<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a style="cursor: pointer;">Veriyi Kaydet</a></li>
-                        <li><a style="cursor: pointer;">Veriyi Çek</a></li>
+                        <li><a style="cursor: pointer;" (click)="postData()">Veriyi Kaydet</a></li>
+                        <li><a style="cursor: pointer;" (click)="fetchData()">Veriyi Çek</a></li>
                     </ul>
                 </li>
             </ul>

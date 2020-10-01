@@ -60,13 +60,14 @@ export class RecipeEditComponent implements OnInit {
       this.recipeEditForm.get('description').value,
       this.recipeEditForm.get('imagePath').value,
       this.recipeIngredients);
-    this.router.navigate(['/recipes'], { relativeTo: this.route });
+      this.router.navigate(['/recipes'], { relativeTo: this.route });
     }
     else{
       this.recipeService.updateRecipe(+this.id,this.recipeEditForm.get('name').value,
       this.recipeEditForm.get('description').value,
       this.recipeEditForm.get('imagePath').value,
       this.recipeIngredients);
+      this.router.navigate(['/recipes'], { relativeTo: this.route });
     }
   }
 
