@@ -1,5 +1,7 @@
 import { trigger } from '@angular/animations';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 import { Recipe } from '../recipes/recipe.model';
 import { RecipeService } from '../recipes/recipe.service';
 
@@ -8,11 +10,16 @@ import { RecipeService } from '../recipes/recipe.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit ,OnDestroy {
+  isAuthenticated=false;
+  private userSubs :Subscription;
   collapsed=true;
-  constructor(private recipeService:RecipeService) { }
+  constructor(private recipeService:RecipeService,private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.userSubs=this.authService.user.subscribe(user =>{
+      this.isAuthenticated= !user ? false:true;
+    });
   }
 
   postData(){
@@ -20,9 +27,12 @@ export class HeaderComponent implements OnInit {
   }
   fetchData(){
     this.recipeService.fetchRecipes().subscribe();
-    /*for(var recipe of this.newRecipes){
-      this.recipeService.addRecipe(recipe);
-    }*/
-    
+  }
+
+  onLogout(){
+    this.authService.logout();
+  }
+  ngOnDestroy(){
+    this.userSubs.unsubscribe();
   }
 }
