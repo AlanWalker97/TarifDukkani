@@ -19,6 +19,7 @@ import { ShoppingListSelectedItemComponent } from './shopping-list/shopping-edit
 import { RecipeService } from './recipes/recipe.service';
 import { HttpClientModule} from '@angular/common/http';
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RecipesResolverService } from './recipes/recipes-resolver.service';
     DropdownDirective,
     RecipeEditComponent,
     ChooseRecipeComponent,
-    ShoppingListSelectedItemComponent
+    ShoppingListSelectedItemComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
