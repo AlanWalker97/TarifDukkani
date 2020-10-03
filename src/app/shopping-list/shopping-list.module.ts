@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -18,9 +17,9 @@ import { ShoppingListComponent } from './shopping-list.component';
     ],
     imports:[
         RouterModule,
-        SharedModule,
         ReactiveFormsModule,
-        ShoppingListRoutingModule
+        ShoppingListRoutingModule,
+        SharedModule
     ]
 })
 export class ShoppingListModule{}

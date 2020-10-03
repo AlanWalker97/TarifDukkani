@@ -23,9 +23,9 @@ import { RecipesComponent } from './recipes.component';
     ],
     imports:[
         RouterModule,
-        SharedModule,
         ReactiveFormsModule,
-        RecipesRoutingModule
+        RecipesRoutingModule,
+        SharedModule
     ]
 })
 export class RecipesModule{}
