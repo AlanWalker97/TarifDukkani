@@ -1,1 +1,1 @@
-Açık Bankacılık kapsamında kullanmak isteyeceğiniz dış firmalar tarafından geliştirilen uygulamalar üzerinden, firma bilgilerinize erişmek üzere bilgi paylaşımı yapmasına onay verdiğiniz kullanıcıları seçiniz.
+
