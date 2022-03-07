@@ -1,1 +1,3 @@
-Açık Bankacılık kapsamında kullanmak isteyeceğiniz bankamız dışındaki firma uygulamalarından QNB Finansbank bilgilerinize erişebilmeniz için açık bankacılık kullanım izninizin olması gerekmektedir.
+{0} isimli firmam için açık bankacılık kullanım izni veriyorum
+
+Kullanıcı kodu {0} olan kullanıcım için açık bankacılık kullanım izni veriyorum
