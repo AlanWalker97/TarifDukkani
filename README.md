@@ -1,3 +1,3 @@
-Kullanıcınıza kullanım izni vermediğiniz için Açık Bankacılık işlemlerinize kendi kullanıcınız ile devam edemezsiniz. Bir sonraki adımda firmanızın diğer kullanıcılarına kullanım izni verebilirsiniz.
+Firmanıza kullanım izni vermediğiniz için Açık Bankacılık işlemine devam edemezsiniz.
 
-Kullanıcınıza kullanım izni vermediğiniz için Açık Bankacılık işlemine devam edemezsiniz.
+Firma ve kullanıcınıza kullanım izni vermediğiniz için Açık Bankacılık işlemine devam edemezsiniz.
